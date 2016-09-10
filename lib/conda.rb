@@ -76,7 +76,8 @@ module Conda
 
             print("Installing miniconda ...\n")
             if Gem.win_platform?
-                `#{installer} /S /AddToPath=0 /RegisterPython=0 /D#{PREFIX}`
+                prefix = PREFIX.gsub("/", "\\")
+                `#{installer} /S /AddToPath=0 /RegisterPython=0 /D=#{prefix} 1>&2`
             else
                 `chmod 755 #{installer}`
                 `#{installer} -b -f -p #{PREFIX}`
