@@ -45,7 +45,7 @@ module Conda
 
     "Get the miniconda installer URL."
     def Conda._installer_url()
-        res = "http://repo.continuum.io/miniconda/Miniconda3-latest-"
+        res = "https://repo.continuum.io/miniconda/Miniconda3-latest-"
         if RbConfig::CONFIG["host"].include? "darwin"
             res += "MacOSX"
         elsif RbConfig::CONFIG["host"].include? "linux"
